@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class InventoryTracker {
+    + main(String[]): void
+    + start(Stage): void
+}
+
+class InventoryTrackerController {}
+
+class Inventory {
+    ArrayList<InventoryItem> items
+
+    + Inventory()
+
+    + getItems (): ArrayList<InventoryItem>
+
+    + addItem(Item): void
+    + removeItem(String): void
+
+    + editNameOfItem(String, String): void
+    + editSerialNumberOfItem(String, String): void
+    + editValueOfItem(String, int): void
+
+    + sortByName(): void
+    + sortBySerialNumber(): void
+    + sortByValue(): void
+
+    + searchByName(String): InventoryItem
+    + searchBySerialNumber(String): InventoryItem
+
+    + exportTSV(String, String): String
+    + exportHTML(String, String): String
+}
+
+class InventoryItem {
+    String name;
+    String serialNumber;
+    int value;
+
+    + InventoryItem(String, String, int)
+
+    + setName(String): void
+    + setSerialNumber(String): void
+    + setValue(int): void
+
+    + getName(): String
+    + getSerialNumber(): String
+    + getValue(): int
+
+    + toString(): String
+}
+
+javafx.Application <|-- InventoryTracker
+javafx.Initializable <|... InventoryTrackerController
+InventoryTracker <-- InventoryTrackerController
+InventoryTrackerController *--> Inventory
+Inventory *-> InventoryItem
+
+@enduml
