@@ -117,7 +117,7 @@ public class Inventory {
     public String exportTSV(String fileLocation, String fileName) {
         try {
             //Create a writer and pass it the file location and name.
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation + "\\" + fileName + ".txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation + "/" + fileName + ".txt"));
             //Write the items one item on each line. The attributes of the items will be separated by tabs.
             for(int i = 0; i < items.size(); i++)
                 bw.write(items.get(i).toString() + "\n");
@@ -135,7 +135,7 @@ public class Inventory {
     public String exportHTML(String fileLocation, String fileName) {
         try {
             //Create a writer and pass it the file location and name.
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation + "\\" + fileName + ".html"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation + "/" + fileName + ".html"));
             //Write some HTML tags.
             bw.write("<html>\n");
             bw.write("<head>" + "\n \"" + fileName + "\"\n</head>\n");
