@@ -60,7 +60,7 @@ public class Inventory {
     }
 
     //Create a function to edit the value of the items in the list of items in the inventory.
-    public void editValueOfItem(String serialNumber, int newValue) {
+    public void editValueOfItem(String serialNumber, double newValue) {
         //Look for the item by serial number.
         for(int i = 0; i < items.size(); i++)
             //Find the item.
@@ -88,16 +88,17 @@ public class Inventory {
     }
 
     //Create a function to find an item in the list of items in the inventory by name.
-    public InventoryItem searchByName(String nameSearched) {
-        //Look for the item by name.
+    public ArrayList<InventoryItem> searchByName(String nameSearched) {
+        //Create an ArrayList for the items found with the same name.
+        ArrayList<InventoryItem> ret = new ArrayList<InventoryItem>();
+        //Look for items with the same name.
         for(int i = 0; i < items.size(); i++)
-            //Find the target item.
+            //Once found add them to the ArrayList.
             if(items.get(i).getName().equals(nameSearched))
-                //Return the target item.
-                return items.get(i);
+                ret.add(items.get(i));
 
-        //Return null if no item is found with this name.
-        return null;
+        //Return the ArrayList.
+        return ret;
     }
 
     //Create a function to find an item in the list of items in the inventory by serial number.
@@ -154,5 +155,12 @@ public class Inventory {
             //If the writer did not work return failure.
             return "Failure";
         }
+    }
+
+    public String importInventory(String fileLocation) {
+        //Look for the file in the provided location.
+        //Parse the data
+        //Fill in our inventory with the data parsed.
+        return "";
     }
 }

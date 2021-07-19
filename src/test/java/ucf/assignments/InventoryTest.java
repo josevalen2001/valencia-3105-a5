@@ -2,6 +2,8 @@ package ucf.assignments;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTest {
@@ -134,9 +136,9 @@ class InventoryTest {
         testInventory.addItem(testItem2);
         testInventory.addItem(testItem);
         //Look for an item and save it.
-        InventoryItem temp = testInventory.searchByName("TestItem");
+        ArrayList<InventoryItem> temp = testInventory.searchByName("TestItem");
         //Check the name of the saved item is the correct one.
-        assertEquals("TestItem", temp.getName());
+        assertEquals("TestItem", temp.get(0).getName());
     }
 
     @Test

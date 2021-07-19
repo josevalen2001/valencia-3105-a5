@@ -6,7 +6,58 @@ class InventoryTracker {
     + start(Stage): void
 }
 
-class InventoryTrackerController {}
+class InventoryTrackerController {
+
+     - TableView<InventoryItem> inventoryTable
+
+     - TableColumn<InventoryItem, String> serialNumberColumn
+     - TableColumn<InventoryItem, String> nameColumn
+     - TableColumn<InventoryItem, Double> valueColumn
+
+     - Button addItemBtn
+     - Button removeBtn
+     - Button editItemBtn
+     - Button sortByNameBtn
+     - Button sortBySerialNumberBtn
+     - Button sortByValueBtn
+     - Button searchByNameBtn
+     - Button searchBySerialNumberBtn
+     - Button viewAllBtn
+     - Button exportToTxtBtn
+     - Button exportToHtmlBtn
+     - Button importBtn
+
+     - TextField newSerialNumber
+     - TextField newValue
+     - TextField newName
+     - TextField editSerialNumber
+     - TextField editName
+     - TextField editValue
+     - TextField txtFileName
+     - TextField txtFileLocation
+     - TextField htmlFileName
+     - TextField htmlFileLocation
+     - TextField importFileLocation
+     - TextField nameToSearch
+     - TextField serialNumberToSearch
+
+     Inventory mainInventory
+     ObservableList<InventoryItem> listOfItems
+
+     +initialize(URL, ResourceBundle): void
+     addItemBtnClicked(Event): void
+     removeBtnClicked(Event): void
+     editItemBtnClicked(Event): void
+     exportToTxtBtnClicked(Event): void
+     exportToHtmlBtnClicked(Event): void
+     sortByNameBtnClicked(Event): void
+     sortBySerialNumberBtnClicked(Event): void
+     sortByValueBtnClicked(Event): void
+     searchByNameBtnClicked(Event): void
+     searchBySerialNumberBtnClicked(Event): void
+     viewAllBtnClicked(Event): void
+     importBtnClicked(Event): void
+}
 
 class Inventory {
     ArrayList<InventoryItem> items
@@ -20,7 +71,7 @@ class Inventory {
 
     + editNameOfItem(String, String): void
     + editSerialNumberOfItem(String, String): void
-    + editValueOfItem(String, int): void
+    + editValueOfItem(String, double): void
 
     + sortByName(): void
     + sortBySerialNumber(): void
@@ -31,22 +82,24 @@ class Inventory {
 
     + exportTSV(String, String): String
     + exportHTML(String, String): String
+
+    + importInventory(String): void
 }
 
 class InventoryItem {
     String name;
     String serialNumber;
-    int value;
+    double value;
 
-    + InventoryItem(String, String, int)
+    + InventoryItem(String, String, double)
 
     + setName(String): void
     + setSerialNumber(String): void
-    + setValue(int): void
+    + setValue(double): void
 
     + getName(): String
     + getSerialNumber(): String
-    + getValue(): int
+    + getValue(): double
 
     + toString(): String
 }
