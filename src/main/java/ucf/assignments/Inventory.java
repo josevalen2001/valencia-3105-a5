@@ -139,7 +139,7 @@ public class Inventory {
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileLocation + "/" + fileName + ".html"));
             //Write some HTML tags.
             bw.write("<html>\n");
-            bw.write("<head>" + "\n \"" + fileName + "\"\n</head>\n");
+            bw.write("<head>" + "\n \"" + fileName + "\"\n</head><br>\n");
             bw.write("<body>\n");
             //Write the items one item on each line. The attributes of the items will be separated by tabs.
             for(int i = 0; i < items.size(); i++)
