@@ -1,5 +1,10 @@
 package ucf.assignments;
 
+/*
+ *  UCF COP3330 Summer 2021 Assignment 5 Solution
+ *  Copyright 2021 Jose Valencia
+ */
+
 public class InventoryItem {
 
     //Create attributes for the name, serial number and value of an item.
