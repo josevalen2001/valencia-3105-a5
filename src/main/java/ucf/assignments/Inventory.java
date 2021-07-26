@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import static java.util.Comparator.comparing;
 
+/*
+ *  UCF COP3330 Summer 2021 Assignment 5 Solution
+ *  Copyright 2021 Jose Valencia
+ */
+
 public class Inventory {
 
     //Create an ArrayList for the items in the inventory.
