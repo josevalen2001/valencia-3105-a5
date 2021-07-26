@@ -14,6 +14,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/*
+ *  UCF COP3330 Summer 2021 Assignment 5 Solution
+ *  Copyright 2021 Jose Valencia
+ */
+
 public class InventoryTrackerController implements Initializable {
 
     //Create the FXML objects.
